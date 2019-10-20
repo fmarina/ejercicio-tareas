@@ -1,0 +1,97 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 18px;
+}
+body {
+  font-family: Rubik, sans-serif;
+  color: #494949;
+  font-size: 1rem;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+h1 {
+  font-size: 2.5rem;
+}
+p, li {
+  font-size: 1.6rem;
+}
+li {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  border: 1px solid #eee;
+  padding-left: 1rem;
+}
+button {
+  background: darkslateblue;
+  color: white;
+  border: 0;
+  padding: 10px 30px;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+button + button {
+  margin-left:1rem;
+}
+button:hover {
+  background: slateblue;
+}
+.container {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 0.5fr;
+  grid-auto-rows: 1fr;
+}
+.main {
+  grid-column: 2/3;
+}
+.item:before,
+.item:after {
+  content: '';
+  width: 25px;
+  height: 3px;
+  border-radius: 2px;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+}
+.item {
+  position: relative;
+}
+.pendiente:after, 
+.pendiente:before {
+    background:#e91e63;
+    transform: translateY(-50%) rotate(135deg);
+}
+.pendiente:after {
+  transform: translateY(-50%) rotate(225deg);
+}
+.finalizada {
+  text-decoration: line-through;
+  color:#8bc34a;
+}
+.finalizada:before,
+.finalizada:after {
+  top: 30px;
+  right: 25px;
+  background: #8bc34a;
+  transform: translateY(-50%) rotate(45deg);
+  transform-origin: right;
+}
+.finalizada:before {
+  width: 15px;
+}
+.finalizada:after {
+  transform: translateY(-50%) rotate(125deg);
+}
+
+.botonesTareas button {
+  font-size: 0.8rem;
+  background: salmon;
+}
