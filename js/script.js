@@ -25,28 +25,8 @@ var tareas = [
 
 //* * además debemos llamar a la función createTareaElement() que recibe como parámetro la tarea. Esta función que ya está dada, tiene por fin crear el elemento de la lista que verá el usuario en el front end.
 
-function agregarTarea() {
-  do {
-    var tarea = prompt('qué tienes pendiente hacer hoy Fer?');
-    if (tarea) {
-    if (varificarSiTareaExiste(tarea)) {
-        alert('ya hay una tarea con ese nombre!');
-      } else {
-        tareas.push([tarea, false]);
-        createTareaElement(tarea);
-      }
-    }
-  } while (tarea);
-}
 
-function varificarSiTareaExiste(tarea) {
-  for (var i = 0; i < tareas.length; i++) {
-    if (tareas[i][0] == tarea ) {
-      return true;
-    }
-  }
-  return false;
-}
+
 
 // * * debemos crear una función que deberá marcar una tarea cómo realizada, tanto en el array tareas, como en el front end.
 // * * lo primero que tenemos que hacer es:
@@ -60,32 +40,15 @@ function varificarSiTareaExiste(tarea) {
 // * * La otra función ya está lista, se llama marcarTareaEnFrontEnd() y recibe como parámetro el nombre de la tarea a marcar, sólo deben llamarla (ejecutarla).
 
 function marcarComoRealizada() {
-  var tareaAMarcar = prompt('ingrese el nombre de la tarea que quiere marcar como realizada');
   //función para buscar tarea en el array;
   //llamar a la función para marcar la tarea en el front end.
-  buscarTareaEnArray(tareaAMarcar);
-  marcarTareaEnFrontEnd(tareaAMarcar)
+ 
 }
 
-function buscarTareaEnArray(tareaRealizada) {
-  tareas.forEach(function(tarea) {
-    if (tarea[0] == tareaRealizada) {
-      tarea[1] = true;
-    } 
-  })
-}
-function contarPendientes() {
-  var pendientes = tareas.filter(function(tarea) {
-    return tarea[1] != true;
-  });
-  alert('Cantidad de tareas pendientes: ' + pendientes.length);
-}
-function contarFinalizadas() {
-  var pendientes = tareas.filter(function (tarea) {
-    return tarea[1] != false;
-  });
-  alert('Cantidad de tareas finalizadas: ' + pendientes.length);
-}
+// * * crear una función para contar todas las tareas pendientes, se tiene que llamar: contarPendientes()
+
+// * *  crear una función para contar todas las tareas realizadas, se tiene que llamar: contarFinalizadas()
+
 
 //funciones listas.
 
